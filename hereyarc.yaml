@@ -1,0 +1,3 @@
+infra: local
+iac: terraform
+deploy: true
