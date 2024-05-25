@@ -11,11 +11,10 @@ variable "hereyaProjectEnv" {
   default = {}
 }
 
-resource "terraform_data" "log" {
-  provisioner "local-exec" {
-    command = templatefile("${path.module}/deploy.tpl", {
-      projectDir : var.hereyaProjectRootDir
-      projectEnv : var.hereyaProjectEnv
-    })
-  }
+output "hereyaProjectRootDir" {
+  value = var.hereyaProjectRootDir
+}
+
+output "hereyaProjectEnv" {
+  value = var.hereyaProjectEnv
 }
